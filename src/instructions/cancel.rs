@@ -7,7 +7,7 @@ use pinocchio::{
 use crate::state::Escrow;
 
 pub fn process_cancel_instruction(accounts: &mut [AccountView], _data: &[u8]) -> ProgramResult {
-    let [maker, mint_a, escrow_account, vault, maker_ata_a] = accounts else {
+    let [maker, mint_a, escrow_account, vault, maker_ata_a, _token_program] = accounts else {
         return Err(ProgramError::NotEnoughAccountKeys);
     };
 
